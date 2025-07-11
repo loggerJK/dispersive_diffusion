@@ -297,7 +297,12 @@ def main(mode, args):
     if args.same_prompt:
         class_labels = [207] * args.batch_size  # 동일한 레이블로 샘플링, 207 : golden retriever
     else :
-        class_labels = np.linspace(0, args.num_classes - 1, args.batch_size).astype(int).tolist() # 배치 사이즈 기준 균등 샘플링
+        np.random.seed(0)  # For reproducibility
+        # Shuffle the class labels
+        indices = np.arange(1000)
+        np.random.shuffle(indices)
+        class_labels = indices[:args.batch_size].astype(int).tolist()
+        # class_labels = np.linspace(0, args.num_classes - 1, args.batch_size).astype(int).tolist() # 배치 사이즈 기준 균등 샘플링
     
     # Create sampling noise:
     n = len(class_labels)

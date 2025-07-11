@@ -4,9 +4,9 @@ export CUDA_VISIBLE_DEVICES="1"
 
 layers_list=({0..27}) 
 # using_steps=($(seq 1 4 25) 27)  # 1, 5, 9, 13, 17, 21, 25, 27
-using_steps=(27)
+using_steps=(14 27)
 batch_size=32
-update_scales=(0.1 0.5 1.0 5.0)
+update_scales=(0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0)
 seed=0
 
 
@@ -17,7 +17,7 @@ python sample_dispersive.py ODE \
     --ckpt ./checkpoint/SiT-XL-2-256.pt \
     --exp_name "InfoNCE_NormScale_entire_diffNoise_samePrompt" \
     --same_prompt \
-    --baseline \
+    --baseline 
     
 # Baseline w/ CFG
 python sample_dispersive.py ODE \
