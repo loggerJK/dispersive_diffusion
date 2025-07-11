@@ -18,7 +18,7 @@ python sample_dispersive.py ODE \
     --exp_name "InfoNCE_NormScale_entire_sameNoise_samePrompt" \
     --same_noise \
     --same_prompt \
-    --baseline
+    --baseline 
     
 # Baseline w/ CFG
 python sample_dispersive.py ODE \
@@ -26,9 +26,9 @@ python sample_dispersive.py ODE \
     --seed "$seed" \
     --ckpt ./checkpoint/SiT-XL-2-256.pt \
     --exp_name "InfoNCE_NormScale_entire_sameNoise_samePrompt" \
-    --baseline \
     --same_noise \
     --same_prompt \
+    --baseline \
     --cfg-scale 4.0
 
 

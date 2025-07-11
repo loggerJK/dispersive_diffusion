@@ -17,6 +17,7 @@ python sample_dispersive.py ODE \
     --ckpt ./checkpoint/SiT-XL-2-256.pt \
     --exp_name "InfoNCE_NormScale_entire_diffNoise_samePrompt" \
     --same_prompt \
+    --baseline \
     
 # Baseline w/ CFG
 python sample_dispersive.py ODE \
